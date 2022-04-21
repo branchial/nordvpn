@@ -21,5 +21,8 @@ RUN addgroup --system vpn && \
     /var/lib/apt/lists/* \
     /var/tmp/*
 
+USER root
 COPY start_vpn.sh /usr/bin
+RUN chmod 755 /usr/bin/start_vpn.sh
+
 CMD /usr/bin/start_vpn.sh
