@@ -7,6 +7,8 @@ RUN apt update -y && \
       apt install -y /tmp/nordrepo.deb && \
       apt update -y && \
       apt install -y nordvpn=$VERSION && \
+      systemctl enable nordvpnd.service && \
+      systemctl start nordvpnd.service && \
       apt remove -y curl nordvpn-release && \
       apt autoremove -y && \
       apt autoclean -y && \
